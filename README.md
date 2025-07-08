@@ -16,9 +16,6 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
   
 <div align="center">
-  <a href="https://mail.google.com/mail/u/0/#inbox">
-  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="Gmail" />
-</a>
   <a href="https://www.instagram.com/akilesh_06" target="_blank">
   <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="Instagram" />
 </a>
@@ -37,18 +34,20 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
   <br>
 </div>
 
-##📊 GitHub Stats:
-<div align="center">
-  
-![](https://github-readme-stats.vercel.app/api?username=Akilesh-kumar-25&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=Akilesh-kumar-25&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=Akilesh-kumar-25&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-![](https://github-contributor-stats.vercel.app/api?username=Akilesh-kumar-25&limit=5&theme=dark&combine_all_yearly_contributions=true)
+ # 📊 GitHub Stats:
+
+ <div align="center">
+   
+![](https://github-readme-stats.vercel.app/api?username=Akilesh-kumar-25&theme=dark&hide_border=false&include_all_commits=true&count_private=true)<br/>
+
+![](https://nirzak-streak-stats.vercel.app/?user=Akilesh-kumar-25&theme=dark&hide_border=false)<br/>
+
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=Akilesh-kumar-25&theme=dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact)
+
 
 ---
 [![](https://visitcount.itsvg.in/api?id=Akilesh-kumar-25&icon=0&color=0)](https://visitcount.itsvg.in)
-
 </div>
 
 
@@ -69,6 +68,8 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
 
 
-  
+
+
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
   
