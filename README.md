@@ -16,7 +16,7 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
   
 <div align="center">
-  <a href="akilesh.s8055@gmail.com">
+  <a href="https://mail.google.com/mail/u/0/#inbox">
   <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="25" alt="Gmail" />
 </a>
   <a href="https://www.instagram.com/akilesh_06" target="_blank">
