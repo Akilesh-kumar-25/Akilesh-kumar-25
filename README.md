@@ -9,7 +9,7 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
   -sometimes solve real problems 🧠
 
-  -often start as experiments 🔬
+  -often 
 
 
 ## 🌐 Socials:
