@@ -2,7 +2,7 @@
 <h1 align="center"> <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="https://i2.kym-cdn.com/photos/images/original/000/215/512/1323562269945.gif" style="width:300px; display:block; margin:auto;" alt="Cool Image">
 </a>  </h1>
 
-I’m Akileshkumar S, a developer fueled by curiosity, caffeine, and a suspicious number of “just one more feature” commits.
+I’m Akileshkumar S, a developer fueled by curiosity, caffeine, and a suspicious number of “just one more feature”
 pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.  
 
   I spend my time building things that:
