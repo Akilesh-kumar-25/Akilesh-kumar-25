@@ -3,7 +3,7 @@
 </a>  </h1>
 
 I’m Akileshkumar S, a developer fueled by curiosity, caffeine, and a suspicious number of “just one more feature” commits.
-pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.  
+pursuing B.Tech in Artificial Intelligence and  
 
   I spend my time building things that:
 
