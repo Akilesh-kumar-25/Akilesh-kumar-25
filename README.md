@@ -7,7 +7,7 @@ pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
   I spend my time building things that:
 
-  -sometimes solve real problems 🧠
+  -sometimes solve 🧠
 
   -often start as experiments 🔬
 
