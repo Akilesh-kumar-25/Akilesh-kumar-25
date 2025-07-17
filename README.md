@@ -5,7 +5,7 @@
 I’m Akileshkumar S, a developer fueled by curiosity, caffeine, and a suspicious number of “just one more feature” commits.
 pursuing B.Tech in Artificial Intelligence and Data Science — SRM, Chennai.
 
-  I spend my time building things that:
+  I spend my time building things that
 
   -sometimes solve real problems🧠
 
