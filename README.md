@@ -22,25 +22,21 @@
 <h2 align="center">T E C H   S T A C K</h2>
 <br>
 
-<table align="center" style="border: none;">
-  <tr style="border: none;">
-    <td align="center" style="border: none;">
-      <img src="./header-languages.svg?v=51" /><br>
-      <img src="https://skillicons.dev/icons?i=java,python,c,js,php,html,css&perline=4" />
+<table align="center" style="border: none; background: transparent;">
+  <tr style="border: none; background: transparent;">
+    <td align="center" valign="top" style="border: none; background: transparent;">
+      <img src="./header-languages.svg?v=52" /><br>
+      <img src="https://skillicons.dev/icons?i=java,python,c,js,html,css&perline=3" />
+      <br><br><br>
+      <img src="./header-databases.svg?v=52" /><br>
+      <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws&perline=3" />
     </td>
-    <td align="center" style="border: none;">
-      <img src="./header-frameworks.svg?v=51" /><br>
-      <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring&perline=4" />
-    </td>
-  </tr>
-  <tr style="border: none;">
-    <td align="center" style="border: none;">
-      <img src="./header-databases.svg?v=51" /><br>
-      <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws&perline=4" />
-    </td>
-    <td align="center" style="border: none;">
-      <img src="./header-tools.svg?v=51" /><br>
-      <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps&perline=4" />
+    <td align="center" valign="top" style="border: none; background: transparent;">
+      <img src="./header-frameworks.svg?v=52" /><br>
+      <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring&perline=3" />
+      <br><br><br>
+      <img src="./header-tools.svg?v=52" /><br>
+      <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps&perline=3" />
     </td>
   </tr>
 </table>
