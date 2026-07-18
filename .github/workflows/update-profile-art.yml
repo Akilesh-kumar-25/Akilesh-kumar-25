@@ -34,7 +34,7 @@ jobs:
         with:
           github_user_name: Akilesh-kumar-25
           outputs: |
-            github-snake-dark.svg?palette=github-dark
+            github-snake-dark.svg?color_snake=white&color_dots=#161b22,#2d333b,#50565e,#8b949e,#c9d1d9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

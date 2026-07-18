@@ -34,10 +34,13 @@ def enhance():
 
     svg = re.sub(r'<rect class="c[^"]*"[^>]*>', repl_bg, svg)
 
-    # 3. Wrap snake rects
+    # 3. Wrap snake rects and convert to glowing circles
     def repl_snake(match):
         full_match = match.group(0)
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
+        # Convert rounded corners to make it a perfect circle (rx=7.2, ry=7.2 because width is 14.4)
+        full_match = re.sub(r'rx="[^"]*"', 'rx="7.2"', full_match)
+        full_match = re.sub(r'ry="[^"]*"', 'ry="7.2"', full_match)
+        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));">{full_match}</g>'
 
     svg = re.sub(r'<rect class="[su][^"]*"[^>]*>', repl_snake, svg)
 
