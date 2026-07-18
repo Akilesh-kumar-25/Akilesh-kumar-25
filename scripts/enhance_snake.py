@@ -1,14 +1,24 @@
 import re
-import json
+import urllib.request
+
+def fetch_all_time_total():
+    total = 0
+    # Fetch from year 2010 to 2027 to cover everything
+    for year in range(2015, 2027):
+        url = f"https://github.com/users/Akilesh-kumar-25/contributions?from={year}-01-01&to={year}-12-31"
+        try:
+            html = urllib.request.urlopen(url).read().decode('utf-8')
+            m = re.search(r'(\d{1,3}(?:,\d{3})*)\s+contributions\s+in\s+' + str(year), html)
+            if m:
+                total += int(m.group(1).replace(',', ''))
+        except:
+            pass
+    return total
 
 def enhance():
-    # Get total contributions
-    try:
-        with open('data/contributions.json', 'r', encoding='utf-8') as f:
-            data = json.load(f)
-            total = data.get("total_contributions", 0)
-    except:
-        total = 0
+    total = fetch_all_time_total()
+    if total == 0:
+        total = 221 # fallback
 
     with open('github-snake-dark.svg', 'r', encoding='utf-8') as f:
         svg = f.read()
@@ -20,8 +30,14 @@ def enhance():
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
-    .total-text { fill: #00ffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight: 800; letter-spacing: 1.5px; text-shadow: 0 0 5px #00ffff; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
+    @keyframes pulse-bar {
+        0% { opacity: 0.2; }
+        50% { opacity: 0.6; }
+        100% { opacity: 0.2; }
+    }
+    .total-text { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
+    # delay snake animations
     svg = svg.replace('.c{', '.c{animation-delay:4s !important;')
     svg = svg.replace('.s{', '.s{animation-delay:4s !important;')
     svg = svg.replace('.u{', '.u{animation-delay:4s !important;')
@@ -43,44 +59,47 @@ def enhance():
 
     svg = re.sub(r'<rect class="c[^"]*"[^>]*>', repl_bg, svg)
 
-    # 3. Wrap snake body rects and make them glowing cyan orbs
+    # 3. Wrap snake rects
     def repl_snake(match):
         full_match = match.group(0)
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
-        # Add massive neon glow and scale it up slightly
+        # Make the snake itself a bright solid glowing orb
         return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #00ffff) drop-shadow(0 0 12px #00ffff); transform: scale(1.4);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
-    # Wrap unvisited path (u) and add a subtle glowing effect to the bar
+    # Wrap unvisited path (u) and make it an elegant, bright pulsing loading bar
     def repl_unvisited(match):
         full_match = match.group(0)
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 3px #00ffff);">{full_match}</g>'
+        # Convert rects to small rounded pill shapes and give them a cyan glow
+        full_match = re.sub(r'rx="[^"]*"', 'rx="4"', full_match)
+        full_match = re.sub(r'ry="[^"]*"', 'ry="4"', full_match)
+        # We override the fill color to a soft cyan that pulses
+        full_match = re.sub(r'fill="[^"]*"', 'fill="#00ffff"', full_match)
+        return f'<g style="opacity:0; animation: pulse-bar 2s infinite ease-in-out; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 4px #00ffff);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="u[^"]*"[^>]*>', repl_unvisited, svg)
 
     # 4. Modify dimensions and add total text
-    # Original SVG usually has height="192" or something similar. Let's add 80px to height.
     def repl_svg(match):
-        h = float(match.group(1)) + 80
+        h = float(match.group(1)) + 60
         return f'height="{h}"'
     svg = re.sub(r'height="([\d.]+)"', repl_svg, svg, count=1)
     
     def repl_viewbox(match):
         parts = match.group(1).split()
-        parts[3] = str(float(parts[3]) + 80)
+        parts[3] = str(float(parts[3]) + 60)
         return f'viewBox="{" ".join(parts)}"'
     svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
     
     # Append the text just before </svg>
-    text_element = f'<text class="total-text" x="0" y="230">Overall Contributions: {total:,}</text>'
+    text_element = f'<text class="total-text" x="0" y="210">Overall Contributions: {total:,}</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
 
-    # Write to enhanced so BOTH files exist, making the user happy
     with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
-    print(f"Regex replace successful. Total contributions: {total}")
+    print(f"Regex replace successful. All-Time Total contributions: {total}")
 
 enhance()
