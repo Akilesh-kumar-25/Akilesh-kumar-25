@@ -30,12 +30,7 @@ def enhance():
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
-    @keyframes pulse-bar {
-        0% { opacity: 0.2; }
-        50% { opacity: 0.6; }
-        100% { opacity: 0.2; }
-    }
-    .total-text { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
+    .total-text { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
     # delay snake animations
     svg = svg.replace('.c{', '.c{animation-delay:4s !important;')
@@ -70,15 +65,28 @@ def enhance():
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
-    # Wrap unvisited path (u) and make it an elegant, bright pulsing loading bar
+    # Wrap unvisited path (u) and make it assemble left-to-right like a real loading bar without glow
     def repl_unvisited(match):
         full_match = match.group(0)
-        # Convert rects to small rounded pill shapes and give them a cyan glow
+        # Convert rects to small rounded pill shapes
         full_match = re.sub(r'rx="[^"]*"', 'rx="4"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="4"', full_match)
-        # We override the fill color to a soft cyan that pulses
-        full_match = re.sub(r'fill="[^"]*"', 'fill="#00ffff"', full_match)
-        return f'<g style="opacity:0; animation: pulse-bar 2s infinite ease-in-out; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 4px #00ffff);">{full_match}</g>'
+        # We override the fill color to a professional, flat, elegant cyan (no glow)
+        full_match = re.sub(r'fill="[^"]*"', 'fill="#0e7a93"', full_match)
+        
+        # Calculate staggering delay for loading bar effect
+        x_m = re.search(r'x="([\d.]+)"', full_match)
+        y_m = re.search(r'y="([\d.]+)"', full_match)
+        delay = 3.9 # fallback delay
+        if x_m and y_m:
+            x = float(x_m.group(1))
+            y = float(y_m.group(1))
+            wk = (x - 2) / 16
+            row = (y - 2) / 16
+            # Make it assemble starting at 3.9s over 1 second
+            delay = round(3.9 + (wk + row*0.55)/55 * 1.5, 3)
+            
+        return f'<g style="opacity:0; animation: pop 0.3s ease-out forwards; animation-delay: {delay}s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
 
     svg = re.sub(r'<rect class="u[^"]*"[^>]*>', repl_unvisited, svg)
 
