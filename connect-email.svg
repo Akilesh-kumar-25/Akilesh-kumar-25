@@ -18,16 +18,16 @@
   <style>
     .btn { fill: url(#luxury); stroke: #333333; stroke-width: 1.5px; transition: all 0.4s ease; cursor: pointer; }
     .txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #8b949e; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }
-    .icon { stroke: #39D353; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }
+    .icon { fill: #39D353; stroke: none; transition: all 0.4s ease; pointer-events: none; }
     .group:hover .btn { stroke: #8b949e; filter: url(#softGlow); }
     .group:hover .txt { fill: #ffffff; }
     .group:hover .icon { filter: url(#softGlow); }
   </style>
   <g class="group">
     <rect x="5" y="10" width="150" height="40" rx="20" class="btn" />
-    <svg x="20" y="20" width="20" height="20" viewBox="0 0 24 24">
+    <svg x="16" y="20" width="20" height="20" viewBox="0 0 24 24">
       <g class="icon">
-        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
+        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z" />
       </g>
     </svg>
     <text x="50" y="34" class="txt">Email Me</text>

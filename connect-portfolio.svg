@@ -18,16 +18,16 @@
   <style>
     .btn { fill: url(#luxury); stroke: #333333; stroke-width: 1.5px; transition: all 0.4s ease; cursor: pointer; }
     .txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #8b949e; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }
-    .icon { stroke: #58a6ff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }
+    .icon { fill: #58a6ff; stroke: none; transition: all 0.4s ease; pointer-events: none; }
     .group:hover .btn { stroke: #8b949e; filter: url(#softGlow); }
     .group:hover .txt { fill: #ffffff; }
     .group:hover .icon { filter: url(#softGlow); }
   </style>
   <g class="group">
     <rect x="5" y="10" width="150" height="40" rx="20" class="btn" />
-    <svg x="20" y="20" width="20" height="20" viewBox="0 0 24 24">
+    <svg x="16" y="20" width="20" height="20" viewBox="0 0 24 24">
       <g class="icon">
-        <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm0 2.4c3.34 0 6.27 1.74 7.96 4.37h-3.88c-.6-1.84-1.58-3.44-2.85-4.65C12.83 2.15 12.42 2.22 12 2.4zm-1.84.14c1.18 1.15 2.08 2.68 2.64 4.43H11.2V2.54zM9.8 2.54v4.43H6.84c.56-1.75 1.46-3.28 2.64-4.43h.32zM3.46 8.37h4.08c-.28 1.17-.44 2.4-.44 3.63s.16 2.46.44 3.63H3.46c-.46-1.12-.73-2.35-.73-3.63s.27-2.51.73-3.63zm1.18 8.86h3.88c.6 1.84 1.58 3.44 2.85 4.65-1.96-.28-3.7-.99-5.12-2.01-1.01-.84-1.86-1.87-2.51-3.03zm7.36 4.23c-1.18-1.15-2.08-2.68-2.64-4.43h2.96v4.43zm1.4 0v-4.43h2.96c-.56 1.75-1.46 3.28-2.64 4.43h-.32zm1.6-6.83H11.2V9.9h3.8c.27 1.16.42 2.38.42 3.63 0 1.25-.15 2.47-.42 3.63zm3.74-.9h-4.08c.28-1.17.44-2.4.44-3.63s-.16-2.46-.44-3.63h4.08c.46 1.12.73 2.35.73 3.63s-.27 2.51-.73 3.63z" />
       </g>
     </svg>
     <text x="50" y="34" class="txt">Portfolio</text>
