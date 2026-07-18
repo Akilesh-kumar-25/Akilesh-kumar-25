@@ -9,7 +9,12 @@
 <br>
 <br>
 
-<img src="./terminal-profile.svg" width="860" alt="Terminal Profile Card" />
+<table>
+<tr>
+<td valign="top"><img src="./akilesh-identity.svg" width="370" alt="Code Identity" /></td>
+<td valign="top"><img src="./terminal-profile.svg" width="490" alt="Terminal Profile" /></td>
+</tr>
+</table>
 
 <br>
 <br>
