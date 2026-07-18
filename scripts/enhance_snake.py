@@ -1,18 +1,27 @@
 import re
+import json
 
 def enhance():
+    # Get total contributions
+    try:
+        with open('data/contributions.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            total = data.get("total_contributions", 0)
+    except:
+        total = 0
+
     with open('github-snake-dark.svg', 'r', encoding='utf-8') as f:
         svg = f.read()
 
-    # 1. Add custom CSS
+    # 1. Add custom CSS and text styles
     custom_css = """
     @keyframes pop {
         0% { opacity: 0; transform: scale(0.2); }
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
+    .total-text { fill: #aaaaaa; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
-    # delay snake animations
     svg = svg.replace('.c{', '.c{animation-delay:4s !important;')
     svg = svg.replace('.s{', '.s{animation-delay:4s !important;')
     svg = svg.replace('.u{', '.u{animation-delay:4s !important;')
@@ -34,18 +43,36 @@ def enhance():
 
     svg = re.sub(r'<rect class="c[^"]*"[^>]*>', repl_bg, svg)
 
-    # 3. Wrap snake rects and convert to glowing circles
+    # 3. Wrap snake rects and make them wildly distinct (glowing neon cyan)
     def repl_snake(match):
         full_match = match.group(0)
-        # Convert rounded corners to make it a perfect circle (rx=7.2, ry=7.2 because width is 14.4)
-        full_match = re.sub(r'rx="[^"]*"', 'rx="7.2"', full_match)
-        full_match = re.sub(r'ry="[^"]*"', 'ry="7.2"', full_match)
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 5px rgba(255,255,255,0.8));">{full_match}</g>'
+        # Convert to circle
+        full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
+        full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
+        # Add massive neon glow and scale it up slightly
+        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #00ffff) drop-shadow(0 0 12px #00ffff); transform: scale(1.4);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="[su][^"]*"[^>]*>', repl_snake, svg)
 
+    # 4. Modify dimensions and add total text
+    # Original SVG usually has height="192" or something similar. Let's add 30px to height.
+    def repl_svg(match):
+        h = float(match.group(1)) + 30
+        return f'height="{h}"'
+    svg = re.sub(r'height="([\d.]+)"', repl_svg, svg, count=1)
+    
+    def repl_viewbox(match):
+        parts = match.group(1).split()
+        parts[3] = str(float(parts[3]) + 30)
+        return f'viewBox="{" ".join(parts)}"'
+    svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
+    
+    # Append the text just before </svg>
+    text_element = f'<text class="total-text" x="0" y="195">{total:,} contributions in the last year</text>'
+    svg = svg.replace('</svg>', f'{text_element}</svg>')
+
     with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
-    print("Regex replace successful.")
+    print(f"Regex replace successful. Total contributions: {total}")
 
 enhance()
