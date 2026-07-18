@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="120" viewBox="0 0 860 120">
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" viewBox="0 0 860 160">
   <defs>
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#00f2fe" />
-      <stop offset="50%" stop-color="#4facfe" />
-      <stop offset="100%" stop-color="#f093fb" />
+      <stop offset="0%" stop-color="#888888" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#888888" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  <text x="430" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="60" font-weight="900" fill="url(#textGrad)" text-anchor="middle" filter="url(#glow)" letter-spacing="-1">Hi, I'm Akilesh Kumar S 👋</text>
+  <rect width="860" height="160" fill="transparent"/>
+  <text x="430" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="300" fill="url(#textGrad)" text-anchor="middle" letter-spacing="8">A K I L E S H   K U M A R   S</text>
+  <text x="430" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="middle" letter-spacing="4">FULL-STACK ENGINEER &amp; AI BUILDER</text>
+  <line x1="330" y1="140" x2="530" y2="140" stroke="#333333" stroke-width="1" />
 </svg>
