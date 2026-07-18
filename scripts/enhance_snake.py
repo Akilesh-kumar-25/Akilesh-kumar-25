@@ -30,10 +30,10 @@ def enhance():
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
-    @keyframes stunning-pulse {
-        0% { opacity: 0.1; filter: drop-shadow(0 0 2px #00ffff); transform: scale(0.9); }
-        50% { opacity: 1; filter: drop-shadow(0 0 8px #00ffff); transform: scale(1.15); }
-        100% { opacity: 0.1; filter: drop-shadow(0 0 2px #00ffff); transform: scale(0.9); }
+    @keyframes pulse-fade {
+        0% { opacity: 0.1; }
+        50% { opacity: 0.8; }
+        100% { opacity: 0.1; }
     }
     .total-text { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
@@ -90,7 +90,7 @@ def enhance():
             row = (y - 2) / 16
             delay = round(3.9 + (wk + row*0.55)/55 * 1.5, 3)
             
-        return f'<g style="opacity:0; animation: stunning-pulse 1.5s infinite ease-in-out; animation-delay: {delay}s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
+        return f'<g style="opacity:0; animation: pulse-fade 1.5s infinite ease-in-out; animation-delay: {delay}s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
 
     svg = re.sub(r'<rect class="u[^"]*"[^>]*>', repl_unvisited, svg)
 
