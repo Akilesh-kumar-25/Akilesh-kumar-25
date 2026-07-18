@@ -18,11 +18,10 @@
     <circle cx="20" cy="20" r="6" class="mac-red" />
     <circle cx="40" cy="20" r="6" class="mac-yel" />
     <circle cx="60" cy="20" r="6" class="mac-grn" />
-    <text x="370" y="25" class="text" fill="#8b949e" text-anchor="middle">Initializing Akilesh.SYS ... [OK]</text>
     <line x1="0" y1="40" x2="740" y2="40" class="divider" />
     
     <!-- Section 1: Identity -->
-    <text x="30" y="75" style="fill: #3fb950; font-weight: bold; font-family: 'Consolas', 'Courier New', monospace; font-size: 16px;">Akilesh.SYS</text>
+    <text x="30" y="75" style="fill: #3fb950; font-weight: bold; font-family: 'Consolas', 'Courier New', monospace; font-size: 16px;">akilesh@github</text>
     <line x1="180" y1="70" x2="710" y2="70" class="divider" />
     
     <text x="30" y="105" class="label">Edu</text>
