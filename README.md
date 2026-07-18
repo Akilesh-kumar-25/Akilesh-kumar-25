@@ -19,37 +19,43 @@
 <br>
 <br>
 
-<h3 align="center">T E C H   S T A C K</h3>
+<h2 align="center">T E C H   S T A C K</h2>
 <br>
 
-<div align="center">
-  <img src="./header-languages.svg?v=50" /><br>
-  <img src="https://skillicons.dev/icons?i=java,python,c,js,php,html,css" />
-  <br><br>
-  
-  <img src="./header-frameworks.svg?v=50" /><br>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring" />
-  <br><br>
-  
-  <img src="./header-databases.svg?v=50" /><br>
-  <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws" />
-  <br><br>
-  
-  <img src="./header-tools.svg?v=50" /><br>
-  <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps" />
-</div>
+<table align="center" style="border: none;">
+  <tr style="border: none;">
+    <td align="center" style="border: none;">
+      <img src="./header-languages.svg?v=51" /><br>
+      <img src="https://skillicons.dev/icons?i=java,python,c,js,php,html,css&perline=4" />
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./header-frameworks.svg?v=51" /><br>
+      <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring&perline=4" />
+    </td>
+  </tr>
+  <tr style="border: none;">
+    <td align="center" style="border: none;">
+      <img src="./header-databases.svg?v=51" /><br>
+      <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws&perline=4" />
+    </td>
+    <td align="center" style="border: none;">
+      <img src="./header-tools.svg?v=51" /><br>
+      <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps&perline=4" />
+    </td>
+  </tr>
+</table>
 
 <br>
 <br>
 
-<h3 align="center">C O N N E C T</h3>
+<h2 align="center">C O N N E C T</h2>
 <br>
 
 <p align="center">
-  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=50" /></a>
-  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=50" /></a>
-  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=50" /></a>
-  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=50" /></a>
+  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=51" /></a>
+  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=51" /></a>
+  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=51" /></a>
+  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=51" /></a>
 </p>
 
 <br>

@@ -1,15 +1,15 @@
 import os
 
 def build_header(filename, text):
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="400" height="70">
-  <text x="200" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="300" fill="#e6e6e6" text-anchor="middle" letter-spacing="8">{text.upper()}</text>
-  <line x1="160" y1="58" x2="240" y2="58" stroke="#333333" stroke-width="1"/>
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="300" height="60">
+  <text x="150" y="45" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#e6e6e6" text-anchor="middle" letter-spacing="8">{text.upper()}</text>
+  <line x1="110" y1="55" x2="190" y2="55" stroke="#333333" stroke-width="1"/>
 </svg>"""
     with open(filename, "w", encoding="utf-8") as f:
         f.write(svg)
 
-def build_connect(filename, text):
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="170" height="60">
+def build_connect(filename, text, path_data):
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="160" height="60">
   <defs>
     <linearGradient id="luxury" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#1f2023" />
@@ -28,13 +28,21 @@ def build_connect(filename, text):
   </defs>
   <style>
     .btn {{ fill: url(#luxury); stroke: #333333; stroke-width: 1px; transition: all 0.4s ease; cursor: pointer; }}
-    .txt {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 400; fill: #8b949e; text-anchor: middle; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }}
+    .txt {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #8b949e; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }}
+    .icon {{ stroke: #8b949e; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }}
     .group:hover .btn {{ stroke: #8b949e; filter: url(#softGlow); }}
     .group:hover .txt {{ fill: #ffffff; }}
+    .group:hover .icon {{ stroke: #ffffff; }}
   </style>
   <g class="group">
-    <rect x="10" y="10" width="150" height="40" rx="20" class="btn" />
-    <text x="85" y="34" class="txt">{text}</text>
+    <rect x="5" y="10" width="150" height="40" rx="20" class="btn" />
+    <!-- Icon rendering -->
+    <svg x="20" y="20" width="20" height="20" viewBox="0 0 24 24">
+      <g class="icon">
+        {path_data}
+      </g>
+    </svg>
+    <text x="50" y="34" class="txt">{text}</text>
   </g>
 </svg>"""
     with open(filename, "w", encoding="utf-8") as f:
@@ -47,9 +55,14 @@ build_header("header-databases.svg", "Databases")
 build_header("header-tools.svg", "Tools")
 
 # Connect
-build_connect("connect-portfolio.svg", "Portfolio")
-build_connect("connect-linkedin.svg", "LinkedIn")
-build_connect("connect-instagram.svg", "Instagram")
-build_connect("connect-email.svg", "Email Me")
+path_portfolio = '<circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>'
+path_linkedin = '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle>'
+path_instagram = '<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>'
+path_email = '<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>'
 
-print("Luxury theme elements generated perfectly!")
+build_connect("connect-portfolio.svg", "Portfolio", path_portfolio)
+build_connect("connect-linkedin.svg", "LinkedIn", path_linkedin)
+build_connect("connect-instagram.svg", "Instagram", path_instagram)
+build_connect("connect-email.svg", "Email Me", path_email)
+
+print("2-Column Grid theme elements generated perfectly!")
