@@ -4,7 +4,7 @@
 
 <br>
 
-<img src="./contrib-heatmap.svg" width="860" alt="GitHub Contributions" />
+<img src="./github-snake-dark.svg" width="860" alt="GitHub Contributions Snake" />
 
 <br>
 <br>
