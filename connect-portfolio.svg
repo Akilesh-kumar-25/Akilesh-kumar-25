@@ -7,7 +7,7 @@
     <filter id="softGlow">
       <feGaussianBlur stdDeviation="3" result="blur" />
       <feComponentTransfer in="blur" result="glow">
-        <feFuncA type="linear" slope="0.3" />
+        <feFuncA type="linear" slope="0.4" />
       </feComponentTransfer>
       <feMerge>
         <feMergeNode in="glow" />
@@ -16,16 +16,15 @@
     </filter>
   </defs>
   <style>
-    .btn { fill: url(#luxury); stroke: #333333; stroke-width: 1px; transition: all 0.4s ease; cursor: pointer; }
-    .txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 500; fill: #8b949e; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }
-    .icon { stroke: #8b949e; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }
-    .group:hover .btn { stroke: #8b949e; filter: url(#softGlow); }
+    .btn { fill: url(#luxury); stroke: #58a6ff; stroke-width: 1.5px; transition: all 0.4s ease; cursor: pointer; }
+    .txt { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #58a6ff; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }
+    .icon { stroke: #58a6ff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }
+    .group:hover .btn { stroke: #58a6ff; filter: url(#softGlow); fill: #58a6ff; fill-opacity: 0.1; }
     .group:hover .txt { fill: #ffffff; }
     .group:hover .icon { stroke: #ffffff; }
   </style>
   <g class="group">
     <rect x="5" y="10" width="150" height="40" rx="20" class="btn" />
-    <!-- Icon rendering -->
     <svg x="20" y="20" width="20" height="20" viewBox="0 0 24 24">
       <g class="icon">
         <circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>

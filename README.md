@@ -19,7 +19,7 @@
 <br>
 <br>
 
-<h2 align="center">T E C H   S T A C K</h2>
+<h1 align="center">T E C H   S T A C K</h1>
 <br>
 
 <div align="center">
@@ -29,14 +29,14 @@
 <br>
 <br>
 
-<h2 align="center">C O N N E C T</h2>
+<h1 align="center">C O N N E C T</h1>
 <br>
 
 <p align="center">
-  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=51" /></a>
-  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=51" /></a>
-  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=51" /></a>
-  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=51" /></a>
+  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=52" /></a>
+  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=52" /></a>
+  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=52" /></a>
+  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=52" /></a>
 </p>
 
 <br>
