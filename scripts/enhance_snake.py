@@ -20,7 +20,7 @@ def enhance():
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
-    .total-text { fill: #aaaaaa; font-family: system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 500; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
+    .total-text { fill: #ffffff; font-family: system-ui, -apple-system, sans-serif; font-size: 16px; font-weight: 600; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
     svg = svg.replace('.c{', '.c{animation-delay:4s !important;')
     svg = svg.replace('.s{', '.s{animation-delay:4s !important;')
@@ -43,7 +43,7 @@ def enhance():
 
     svg = re.sub(r'<rect class="c[^"]*"[^>]*>', repl_bg, svg)
 
-    # 3. Wrap snake body rects and make them wildly distinct (glowing neon cyan)
+    # 3. Wrap snake body rects and make them glowing green circles
     def repl_snake(match):
         full_match = match.group(0)
         # Convert to circle
@@ -75,11 +75,11 @@ def enhance():
     svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
     
     # Append the text just before </svg>
-    # Make it brighter and explicitly say "Overall Contributions"
-    text_element = f'<text class="total-text" style="fill: #ffffff; font-size: 16px; font-weight: 600;" x="0" y="230">Overall Contributions: {total:,}</text>'
+    text_element = f'<text class="total-text" x="0" y="230">Overall Contributions: {total:,}</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
 
-    with open('github-snake-dark.svg', 'w', encoding='utf-8') as f:
+    # Write to enhanced so BOTH files exist, making the user happy
+    with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
     print(f"Regex replace successful. Total contributions: {total}")
 
