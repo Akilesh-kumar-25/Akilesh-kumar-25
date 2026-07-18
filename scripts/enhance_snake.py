@@ -60,16 +60,14 @@ def enhance():
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
-        # Make the snake itself a bright solid glowing orb
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #00ffff) drop-shadow(0 0 12px #00ffff); transform: scale(1.4);">{full_match}</g>'
+        # Make the snake itself a bright solid glowing orb (using GitHub bright green)
+        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #39d353) drop-shadow(0 0 12px #39d353); transform: scale(1.4);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
     # Wrap unvisited path (u) and make it assemble left-to-right like a normal continuous bar
     def repl_unvisited(match):
         full_match = match.group(0)
-        # We override the fill color to a vibrant cyan but keep it as normal rects
-        full_match = re.sub(r'fill="[^"]*"', 'fill="#00ffff"', full_match)
         
         # Calculate staggering delay for the left-to-right fill effect
         x_m = re.search(r'x="([\d.]+)"', full_match)
