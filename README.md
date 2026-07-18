@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./akilesh-banner.svg" width="860" alt="Akilesh Kumar S" />
+<img src="./akilesh-banner.svg?v=1" width="860" alt="Akilesh Kumar S" />
 
 <br>
 
