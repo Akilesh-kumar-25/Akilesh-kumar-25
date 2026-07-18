@@ -23,19 +23,19 @@
 <br>
 
 <div align="center">
-  <img src="./header-languages.svg" /><br>
+  <img src="./header-languages.svg?v=50" /><br>
   <img src="https://skillicons.dev/icons?i=java,python,c,js,php,html,css" />
   <br><br>
   
-  <img src="./header-frameworks.svg" /><br>
+  <img src="./header-frameworks.svg?v=50" /><br>
   <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring" />
   <br><br>
   
-  <img src="./header-databases.svg" /><br>
+  <img src="./header-databases.svg?v=50" /><br>
   <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws" />
   <br><br>
   
-  <img src="./header-tools.svg" /><br>
+  <img src="./header-tools.svg?v=50" /><br>
   <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps" />
 </div>
 
@@ -46,10 +46,10 @@
 <br>
 
 <p align="center">
-  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg" /></a>
-  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg" /></a>
-  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg" /></a>
-  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg" /></a>
+  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=50" /></a>
+  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=50" /></a>
+  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=50" /></a>
+  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=50" /></a>
 </p>
 
 <br>
