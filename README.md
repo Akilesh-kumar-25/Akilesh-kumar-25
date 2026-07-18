@@ -23,15 +23,15 @@
 <br>
 
 <p align="center">
-  <img src="./stack-languages.svg?v=54" />
+  <img src="./stack-languages.svg?v=55" />
   &nbsp;&nbsp;&nbsp;
-  <img src="./stack-frameworks.svg?v=54" />
+  <img src="./stack-frameworks.svg?v=55" />
 </p>
 
 <p align="center">
-  <img src="./stack-databases.svg?v=54" />
+  <img src="./stack-databases.svg?v=55" />
   &nbsp;&nbsp;&nbsp;
-  <img src="./stack-tools.svg?v=54" />
+  <img src="./stack-tools.svg?v=55" />
 </p>
 
 <br>

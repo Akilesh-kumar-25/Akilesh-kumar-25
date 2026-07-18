@@ -15,23 +15,25 @@ for cat in categories:
         with urllib.request.urlopen(req) as response:
             svg_data = response.read().decode('utf-8')
             
-            width_match = re.search(r'width="(\d+)"', svg_data)
-            height_match = re.search(r'height="(\d+)"', svg_data)
+            # Remove XML declaration and whitespace
+            svg_data = re.sub(r'<\?xml.*?\?>', '', svg_data).strip()
+            
+            # Match the outer SVG tag only
+            width_match = re.search(r'^<svg[^>]*?width="([\d.]+)"', svg_data)
+            height_match = re.search(r'^<svg[^>]*?height="([\d.]+)"', svg_data)
             
             if width_match and height_match:
-                icon_w = int(width_match.group(1))
-                icon_h = int(height_match.group(1))
+                icon_w = float(width_match.group(1))
+                icon_h = float(height_match.group(1))
             else:
                 icon_w = 200
                 icon_h = 100
                 
             canvas_w = 400
-            canvas_h = 200
+            canvas_h = 220
             
-            offset_x = (canvas_w - icon_w) // 2
+            offset_x = (canvas_w - icon_w) / 2
             offset_y = 70
-            
-            svg_data = re.sub(r'<\?xml.*?\?>', '', svg_data)
             
             master_svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{canvas_w}" height="{canvas_h}">
   <text x="{canvas_w//2}" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="400" fill="#e6e6e6" text-anchor="middle" letter-spacing="8">{cat['name'].upper()}</text>
@@ -43,6 +45,6 @@ for cat in categories:
             
             with open(cat['file'], 'w', encoding='utf-8') as f:
                 f.write(master_svg)
-            print(f"Generated {cat['file']}")
+            print(f"Generated {cat['file']} with width {icon_w}")
     except Exception as e:
         print(f"Failed {cat['name']}: {e}")
