@@ -23,17 +23,7 @@
 <br>
 
 <p align="center">
-  <code><b>Languages</b></code><br>
-  <img src="https://skillicons.dev/icons?i=java,python,c,js,php,html,css&theme=dark" /><br><br>
-  
-  <code><b>Frameworks & Backend</b></code><br>
-  <img src="https://skillicons.dev/icons?i=react,nextjs,nodejs,spring&theme=dark" /><br><br>
-  
-  <code><b>Databases & Cloud</b></code><br>
-  <img src="https://skillicons.dev/icons?i=mysql,mongodb,aws&theme=dark" /><br><br>
-  
-  <code><b>Tools & Design</b></code><br>
-  <img src="https://skillicons.dev/icons?i=github,figma,vscode,ps&theme=dark" />
+  <img src="./tech-stack.svg" width="860" alt="Tech Stack" />
 </p>
 
 <br>
