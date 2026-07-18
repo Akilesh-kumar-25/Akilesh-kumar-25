@@ -60,9 +60,9 @@ def enhance():
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
-        # Override the snake fill color to bright green so it isn't black/purple
-        full_match = re.sub(r'fill="[^"]*"', 'fill="#39d353"', full_match)
-        # Make the snake itself a bright solid glowing orb (using GitHub bright green)
+        # Force the snake fill color to pure white so it isn't purple
+        full_match = full_match.replace('<rect ', '<rect style="fill: #ffffff !important;" ')
+        # Make the snake itself a bright solid glowing orb (using GitHub bright green glow)
         return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #39d353) drop-shadow(0 0 12px #39d353); transform: scale(1.4);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
