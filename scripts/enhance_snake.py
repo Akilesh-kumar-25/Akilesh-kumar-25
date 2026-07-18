@@ -100,7 +100,7 @@ def enhance():
     text_element = f'<text class="total-text" x="0" y="210">Overall Contributions: {total:,}</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
 
-    with open('akilesh-snake-graph.svg', 'w', encoding='utf-8') as f:
+    with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
     print(f"Regex replace successful. All-Time Total contributions: {total}")
 

@@ -48,4 +48,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg akilesh-snake-graph.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg github-snake-dark-enhanced.svg"
