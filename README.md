@@ -4,7 +4,7 @@
 
 <br>
 
-<img src="./github-snake-dark-enhanced.svg?v=17" width="860" alt="GitHub Contributions Snake" />
+<img src="./github-snake-dark-enhanced.svg?v=18" width="860" alt="GitHub Contributions Snake" />
 
 <br>
 <br>
