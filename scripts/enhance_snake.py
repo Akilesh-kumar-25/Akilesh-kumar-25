@@ -43,14 +43,14 @@ def enhance():
 
     svg = re.sub(r'<rect class="c[^"]*"[^>]*>', repl_bg, svg)
 
-    # 3. Wrap snake body rects and make them glowing green circles
+    # 3. Wrap snake body rects and make them glowing cyan orbs
     def repl_snake(match):
         full_match = match.group(0)
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
-        # Add subtle green neon glow, and reduce scale slightly
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 3px #39d353); transform: scale(1.15);">{full_match}</g>'
+        # Add massive neon glow and scale it up slightly
+        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #00ffff) drop-shadow(0 0 12px #00ffff); transform: scale(1.4);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
