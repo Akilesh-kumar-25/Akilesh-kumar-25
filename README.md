@@ -1,9 +1,4 @@
 <div align="center">
-  <img src="./terminal-profile.svg" alt="Terminal Profile Card" />
-  
-  <br>
-  <br>
-
 
 <img src="./akilesh-banner.svg?v=1" width="860" alt="Akilesh Kumar S" />
 
@@ -14,12 +9,7 @@
 <br>
 <br>
 
-<table>
-<tr>
-<td valign="top"><img src="./akilesh-identity.svg" width="370" alt="Code Identity" /></td>
-<td valign="top"><img src="./info-card.svg" width="490" alt="Highlights" /></td>
-</tr>
-</table>
+<img src="./terminal-profile.svg" width="860" alt="Terminal Profile Card" />
 
 <br>
 <br>
