@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" viewBox="0 0 140 40">
+  <style>
+    .btn { fill: #111; stroke: #222; stroke-width: 1; transition: all 0.3s ease; cursor: pointer; }
+    .btn:hover { fill: #1a1a1a; stroke: #888; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
+    .text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #aaa; pointer-events: none; transition: all 0.3s ease; }
+    .group:hover .text { fill: #fff; }
+  </style>
+  <g class="group">
+    <rect class="btn" width="138" height="38" x="1" y="1" rx="4" />
+    <text class="text" x="70" y="25" text-anchor="middle">Email</text>
+  </g>
+</svg>

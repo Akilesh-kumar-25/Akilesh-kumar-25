@@ -27,8 +27,8 @@
     
     <text x="0" y="25" fill="#cccccc">public</text>
     <text x="55" y="25" fill="#cccccc">class</text>
-    <text x="100" y="25" fill="#ffffff">AkileshKumarS</text>
-    <text x="200" y="25" fill="#666666">{</text>
+    <text x="100" y="25" fill="#ffffff">Akilesh Kumar S</text>
+    <text x="220" y="25" fill="#666666">{</text>
     
     <text x="20" y="60" fill="#cccccc">String</text>
     <text x="70" y="60" fill="#888888">role =</text>

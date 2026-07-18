@@ -1,13 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="860" height="160" viewBox="0 0 860 160">
   <defs>
     <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#888888" />
+      <stop offset="0%" stop-color="#aaaaaa" />
       <stop offset="50%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#888888" />
+      <stop offset="100%" stop-color="#aaaaaa" />
     </linearGradient>
+    <style>
+      .name {
+        transition: all 0.5s ease;
+        cursor: pointer;
+      }
+      .name:hover {
+        fill: #ffffff;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+      }
+    </style>
   </defs>
   <rect width="860" height="160" fill="transparent"/>
-  <text x="430" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="300" fill="url(#textGrad)" text-anchor="middle" letter-spacing="8">A K I L E S H   K U M A R   S</text>
+  <text class="name" x="430" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="300" fill="url(#textGrad)" text-anchor="middle" letter-spacing="2">Akilesh Kumar S</text>
   <text x="430" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="400" fill="#666666" text-anchor="middle" letter-spacing="4">FULL-STACK ENGINEER &amp; AI BUILDER</text>
   <line x1="330" y1="140" x2="530" y2="140" stroke="#333333" stroke-width="1" />
 </svg>
