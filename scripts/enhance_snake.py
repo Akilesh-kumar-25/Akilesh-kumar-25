@@ -75,7 +75,8 @@ def enhance():
     svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
     
     # Append the text just before </svg>
-    text_element = f'<text class="total-text" x="0" y="230">{total:,} contributions in the last year</text>'
+    # Make it brighter and explicitly say "Overall Contributions"
+    text_element = f'<text class="total-text" style="fill: #ffffff; font-size: 16px; font-weight: 600;" x="0" y="230">Overall Contributions: {total:,}</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
 
     with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
