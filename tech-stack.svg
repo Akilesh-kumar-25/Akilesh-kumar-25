@@ -1,50 +1,181 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="860" height="150" viewBox="0 0 860 150">
-  <style>
-    .tech {
-      fill: #111;
-      stroke: #222;
-      stroke-width: 1;
-      transition: all 0.3s ease;
-      cursor: default;
-    }
-    .tech:hover {
-      fill: #1a1a1a;
-      stroke: #888;
-      filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
-    }
-    .text {
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 12px;
-      font-weight: 500;
-      fill: #888;
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
-    .group:hover .text {
-      fill: #fff;
-    }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="300" viewBox="0 0 860 300">
+  <defs>
+    <!-- Background Blurs for Ambient Glow -->
+    <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="60" />
+    </filter>
+    <filter id="blur2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70" />
+    </filter>
+    <filter id="blur3" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="50" />
+    </filter>
 
-  <!-- Row 1 -->
-  <g class="group" transform="translate(60, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">JavaScript</text></g>
-  <g class="group" transform="translate(170, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">React</text></g>
-  <g class="group" transform="translate(280, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Node.js</text></g>
-  <g class="group" transform="translate(390, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Java</text></g>
-  <g class="group" transform="translate(500, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Spring Boot</text></g>
-  <g class="group" transform="translate(610, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Python</text></g>
-  <g class="group" transform="translate(720, 20)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">C</text></g>
+    <!-- Glassmorphism Card Style -->
+    <style>
+      .bg { fill: #0d1117; }
+      
+      .glass-card {
+        transition: transform 0.3s ease, filter 0.3s ease;
+        cursor: default;
+      }
+      .glass-card:hover {
+        filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+      }
+      .glass-card:hover .card-bg {
+        fill: rgba(255, 255, 255, 0.08);
+        stroke: rgba(255, 255, 255, 0.25);
+      }
+      .glass-card:hover .card-text {
+        fill: #ffffff;
+      }
+      
+      .card-bg {
+        fill: rgba(255, 255, 255, 0.03);
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-width: 1px;
+        transition: all 0.3s ease;
+      }
+      .card-inner-border {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.04);
+        stroke-width: 1px;
+      }
+      .card-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        fill: #c9d1d9;
+        text-anchor: middle;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+      }
 
-  <!-- Row 2 -->
-  <g class="group" transform="translate(60, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">PHP</text></g>
-  <g class="group" transform="translate(170, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">HTML5</text></g>
-  <g class="group" transform="translate(280, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">CSS3</text></g>
-  <g class="group" transform="translate(390, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">MongoDB</text></g>
-  <g class="group" transform="translate(500, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">MySQL</text></g>
-  <g class="group" transform="translate(610, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">AWS</text></g>
-  <g class="group" transform="translate(720, 60)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">GitHub</text></g>
+      /* Floating Animations */
+      @keyframes float1 {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes float2 {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-12px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes float3 {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .f1 { animation: float1 6s ease-in-out infinite; }
+      .f2 { animation: float2 7s ease-in-out infinite; }
+      .f3 { animation: float3 5s ease-in-out infinite; }
+      .d1 { animation-delay: 0s; }
+      .d2 { animation-delay: -2s; }
+      .d3 { animation-delay: -4s; }
+      .d4 { animation-delay: -1s; }
+      .d5 { animation-delay: -3s; }
+    </style>
+  </defs>
 
-  <!-- Row 3 -->
-  <g class="group" transform="translate(280, 100)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Figma</text></g>
-  <g class="group" transform="translate(390, 100)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">Photoshop</text></g>
-  <g class="group" transform="translate(500, 100)"><rect class="tech" width="100" height="32" rx="4" /><text class="text" x="50" y="21" text-anchor="middle">VS Code</text></g>
+  <!-- Solid Background -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Ambient Glowing Orbs -->
+  <circle cx="200" cy="150" r="100" fill="#39d353" filter="url(#blur1)" opacity="0.12" />
+  <circle cx="660" cy="80" r="120" fill="#58a6ff" filter="url(#blur2)" opacity="0.12" />
+  <circle cx="430" cy="220" r="90" fill="#bc8cff" filter="url(#blur3)" opacity="0.15" />
+
+  <!-- ROW 1 -->
+  <!-- JavaScript -->
+  <g class="glass-card f1 d1" transform="translate(45, 40)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">JavaScript</text>
+  </g>
+  <!-- React -->
+  <g class="glass-card f2 d2" transform="translate(205, 40)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">React</text>
+  </g>
+  <!-- Node.js -->
+  <g class="glass-card f3 d3" transform="translate(365, 40)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Node.js</text>
+  </g>
+  <!-- Next.js -->
+  <g class="glass-card f1 d4" transform="translate(525, 40)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Next.js</text>
+  </g>
+  <!-- HTML/CSS -->
+  <g class="glass-card f2 d5" transform="translate(685, 40)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">HTML / CSS</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Python -->
+  <g class="glass-card f3 d2" transform="translate(45, 120)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Python</text>
+  </g>
+  <!-- Java -->
+  <g class="glass-card f1 d5" transform="translate(205, 120)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Java</text>
+  </g>
+  <!-- Spring Boot -->
+  <g class="glass-card f2 d1" transform="translate(365, 120)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Spring Boot</text>
+  </g>
+  <!-- MySQL -->
+  <g class="glass-card f3 d4" transform="translate(525, 120)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">MySQL</text>
+  </g>
+  <!-- MongoDB -->
+  <g class="glass-card f1 d3" transform="translate(685, 120)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">MongoDB</text>
+  </g>
+
+  <!-- ROW 3 -->
+  <!-- AWS -->
+  <g class="glass-card f2 d4" transform="translate(125, 200)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">AWS</text>
+  </g>
+  <!-- GitHub -->
+  <g class="glass-card f3 d1" transform="translate(285, 200)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">GitHub</text>
+  </g>
+  <!-- Figma -->
+  <g class="glass-card f1 d5" transform="translate(445, 200)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">Figma</text>
+  </g>
+  <!-- VS Code -->
+  <g class="glass-card f2 d2" transform="translate(605, 200)">
+    <rect x="0" y="0" width="130" height="50" rx="12" class="card-bg" />
+    <rect x="1" y="1" width="128" height="48" rx="11" class="card-inner-border" />
+    <text x="65" y="31" class="card-text">VS Code</text>
+  </g>
+
 </svg>

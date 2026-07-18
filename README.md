@@ -33,10 +33,10 @@
 <br>
 
 <p align="center">
-  <a href="https://akileshkumar.netlify.app/"><img src="./link-portfolio.svg" width="140" /></a>
-  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./link-linkedin.svg" width="140" /></a>
-  <a href="https://www.instagram.com/akilesh_06/"><img src="./link-instagram.svg" width="140" /></a>
-  <a href="mailto:akilesh.s8055@gmail.com"><img src="./link-email.svg" width="140" /></a>
+  <a href="https://akileshkumar.netlify.app/"><img src="./link-portfolio.svg" width="160" /></a>
+  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./link-linkedin.svg" width="160" /></a>
+  <a href="https://www.instagram.com/akilesh_06/"><img src="./link-instagram.svg" width="160" /></a>
+  <a href="mailto:akilesh.s8055@gmail.com"><img src="./link-email.svg" width="160" /></a>
 </p>
 
 <br>

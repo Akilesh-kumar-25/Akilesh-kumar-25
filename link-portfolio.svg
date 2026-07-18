@@ -1,12 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="40" viewBox="0 0 140 40">
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 160 60">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2e35" />
+      <stop offset="100%" stop-color="#161b22" />
+    </linearGradient>
+  </defs>
   <style>
-    .btn { fill: #111; stroke: #222; stroke-width: 1; transition: all 0.3s ease; cursor: pointer; }
-    .btn:hover { fill: #1a1a1a; stroke: #888; filter: drop-shadow(0 0 5px rgba(255,255,255,0.2)); }
-    .text { font-family: system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 500; fill: #aaa; pointer-events: none; transition: all 0.3s ease; }
-    .group:hover .text { fill: #fff; }
+    .pill {
+      fill: url(#grad);
+      stroke: rgba(255, 255, 255, 0.1);
+      stroke-width: 1px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .container:hover .pill {
+      stroke: #58a6ff;
+      filter: drop-shadow(0 0 8px #58a6ff);
+    }
+    .text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      fill: #c9d1d9;
+      text-anchor: middle;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+    .container:hover .text {
+      fill: #ffffff;
+    }
   </style>
-  <g class="group">
-    <rect class="btn" width="138" height="38" x="1" y="1" rx="4" />
-    <text class="text" x="70" y="25" text-anchor="middle">Portfolio</text>
+  <g class="container">
+    <rect x="10" y="10" width="140" height="40" rx="20" class="pill" />
+    <text x="80" y="35" class="text">Portfolio</text>
   </g>
 </svg>
