@@ -22,17 +22,9 @@
 <h2 align="center">T E C H   S T A C K</h2>
 <br>
 
-<p align="center">
-  <img src="./stack-languages.svg?v=55" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="./stack-frameworks.svg?v=55" />
-</p>
-
-<p align="center">
-  <img src="./stack-databases.svg?v=55" />
-  &nbsp;&nbsp;&nbsp;
-  <img src="./stack-tools.svg?v=55" />
-</p>
+<div align="center">
+  <img src="./bento-tech-stack.svg?v=1" />
+</div>
 
 <br>
 <br>
