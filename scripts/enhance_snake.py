@@ -49,8 +49,8 @@ def enhance():
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
-        # Add massive neon glow and scale it up slightly
-        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #00ffff) drop-shadow(0 0 12px #00ffff); transform: scale(1.4);">{full_match}</g>'
+        # Add subtle green neon glow, and reduce scale slightly
+        return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 3px #39d353); transform: scale(1.15);">{full_match}</g>'
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
@@ -62,20 +62,20 @@ def enhance():
     svg = re.sub(r'<rect class="u[^"]*"[^>]*>', repl_unvisited, svg)
 
     # 4. Modify dimensions and add total text
-    # Original SVG usually has height="192" or something similar. Let's add 50px to height.
+    # Original SVG usually has height="192" or something similar. Let's add 80px to height.
     def repl_svg(match):
-        h = float(match.group(1)) + 50
+        h = float(match.group(1)) + 80
         return f'height="{h}"'
     svg = re.sub(r'height="([\d.]+)"', repl_svg, svg, count=1)
     
     def repl_viewbox(match):
         parts = match.group(1).split()
-        parts[3] = str(float(parts[3]) + 50)
+        parts[3] = str(float(parts[3]) + 80)
         return f'viewBox="{" ".join(parts)}"'
     svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
     
     # Append the text just before </svg>
-    text_element = f'<text class="total-text" x="0" y="200">{total:,} contributions in the last year</text>'
+    text_element = f'<text class="total-text" x="0" y="230">{total:,} contributions in the last year</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
 
     with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
