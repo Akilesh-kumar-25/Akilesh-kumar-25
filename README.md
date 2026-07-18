@@ -1,4 +1,9 @@
 <div align="center">
+  <img src="./terminal-profile.svg" alt="Terminal Profile Card" />
+  
+  <br>
+  <br>
+
 
 <img src="./akilesh-banner.svg?v=1" width="860" alt="Akilesh Kumar S" />
 
