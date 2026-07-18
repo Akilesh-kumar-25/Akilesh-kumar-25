@@ -30,11 +30,6 @@ def enhance():
         60% { opacity: 1; transform: scale(1.1); }
         100% { opacity: 1; transform: scale(1); }
     }
-    @keyframes pulse-fade {
-        0% { opacity: 0.1; }
-        50% { opacity: 0.8; }
-        100% { opacity: 0.1; }
-    }
     .total-text { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.5px; animation: pop 0.5s ease-out forwards; animation-delay: 3s; opacity: 0; }
     """
     # delay snake animations
@@ -70,16 +65,13 @@ def enhance():
 
     svg = re.sub(r'<rect class="s[^"]*"[^>]*>', repl_snake, svg)
 
-    # Wrap unvisited path (u) and make it an elegant, bright pulsing loading bar
+    # Wrap unvisited path (u) and make it assemble left-to-right like a normal continuous bar
     def repl_unvisited(match):
         full_match = match.group(0)
-        # Convert rects to small rounded pill shapes
-        full_match = re.sub(r'rx="[^"]*"', 'rx="5"', full_match)
-        full_match = re.sub(r'ry="[^"]*"', 'ry="5"', full_match)
-        # We override the fill color to a vibrant cyan
+        # We override the fill color to a vibrant cyan but keep it as normal rects
         full_match = re.sub(r'fill="[^"]*"', 'fill="#00ffff"', full_match)
         
-        # Calculate staggering delay for the pulse wave effect
+        # Calculate staggering delay for the left-to-right fill effect
         x_m = re.search(r'x="([\d.]+)"', full_match)
         y_m = re.search(r'y="([\d.]+)"', full_match)
         delay = 3.9 # fallback delay
@@ -90,7 +82,7 @@ def enhance():
             row = (y - 2) / 16
             delay = round(3.9 + (wk + row*0.55)/55 * 1.5, 3)
             
-        return f'<g style="opacity:0; animation: pulse-fade 1.5s infinite ease-in-out; animation-delay: {delay}s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
+        return f'<g style="opacity:0; animation: pop 0.3s ease-out forwards; animation-delay: {delay}s; transform-box: fill-box; transform-origin: center;">{full_match}</g>'
 
     svg = re.sub(r'<rect class="u[^"]*"[^>]*>', repl_unvisited, svg)
 
