@@ -4,6 +4,12 @@
 
 <br>
 
+<h3><code>akilesh@github ~ $ ./contributions.sh</code></h3>
+
+<img src="./contrib-heatmap.svg" width="860" alt="Akilesh's real-time GitHub contribution graph" />
+
+<br>
+
 <table>
 <tr>
 <td valign="top"><img src="./akilesh-identity.svg" width="370" alt="Akilesh — Code Identity" /></td>
