@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="60">
+  <defs>
+    <filter id="neon">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="200" y="40" font-family="'Courier New', Consolas, monospace" font-size="24" font-weight="bold" fill="#39D353" text-anchor="middle" filter="url(#neon)" letter-spacing="4">&lt; Tools /&gt;</text>
+</svg>

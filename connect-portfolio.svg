@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="60">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <style>
+    .btn { fill: transparent; stroke: #39D353; stroke-width: 2; transition: all 0.3s ease; cursor: pointer; }
+    .txt { font-family: 'Courier New', Consolas, monospace; font-size: 16px; font-weight: bold; fill: #39D353; text-anchor: middle; pointer-events: none; transition: all 0.3s ease; }
+    .group:hover .btn { fill: #39D353; filter: url(#glow); }
+    .group:hover .txt { fill: #0d1117; }
+  </style>
+  <g class="group">
+    <rect x="5" y="10" width="170" height="40" rx="4" class="btn" />
+    <text x="90" y="35" class="txt">[ Portfolio ]</text>
+  </g>
+</svg>
