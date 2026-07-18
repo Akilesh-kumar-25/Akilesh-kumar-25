@@ -19,12 +19,12 @@ def build_connect(filename, text, path_data, color):
     </filter>
   </defs>
   <style>
-    .btn {{ fill: url(#luxury); stroke: {color}; stroke-width: 1.5px; transition: all 0.4s ease; cursor: pointer; }}
-    .txt {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: {color}; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }}
+    .btn {{ fill: url(#luxury); stroke: #333333; stroke-width: 1.5px; transition: all 0.4s ease; cursor: pointer; }}
+    .txt {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 600; fill: #8b949e; pointer-events: none; transition: all 0.4s ease; letter-spacing: 2px; text-transform: uppercase; }}
     .icon {{ stroke: {color}; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: all 0.4s ease; pointer-events: none; }}
-    .group:hover .btn {{ stroke: {color}; filter: url(#softGlow); fill: {color}; fill-opacity: 0.1; }}
+    .group:hover .btn {{ stroke: #8b949e; filter: url(#softGlow); }}
     .group:hover .txt {{ fill: #ffffff; }}
-    .group:hover .icon {{ stroke: #ffffff; }}
+    .group:hover .icon {{ filter: url(#softGlow); }}
   </style>
   <g class="group">
     <rect x="5" y="10" width="150" height="40" rx="20" class="btn" />
