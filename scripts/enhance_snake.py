@@ -60,6 +60,8 @@ def enhance():
         # Convert to circle
         full_match = re.sub(r'rx="[^"]*"', 'rx="10"', full_match)
         full_match = re.sub(r'ry="[^"]*"', 'ry="10"', full_match)
+        # Override the snake fill color to bright green so it isn't black/purple
+        full_match = re.sub(r'fill="[^"]*"', 'fill="#39d353"', full_match)
         # Make the snake itself a bright solid glowing orb (using GitHub bright green)
         return f'<g style="opacity:0; animation: pop 0.1s ease-out forwards; animation-delay: 3.9s; transform-box: fill-box; transform-origin: center; filter: drop-shadow(0 0 6px #39d353) drop-shadow(0 0 12px #39d353); transform: scale(1.4);">{full_match}</g>'
 
@@ -96,9 +98,12 @@ def enhance():
         return f'viewBox="{" ".join(parts)}"'
     svg = re.sub(r'viewBox="([^"]+)"', repl_viewbox, svg, count=1)
     
-    # Append the text just before </svg>
+    # Add text and force SVG background to dark mode
     text_element = f'<text class="total-text" x="0" y="210">Overall Contributions: {total:,}</text>'
     svg = svg.replace('</svg>', f'{text_element}</svg>')
+    
+    # Force dark background so it looks perfect on light mode too
+    svg = svg.replace('<svg', '<svg style="background-color: #0d1117;"')
 
     with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
