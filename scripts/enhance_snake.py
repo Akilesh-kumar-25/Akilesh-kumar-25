@@ -20,7 +20,7 @@ def enhance():
     if total == 0:
         total = 221 # fallback
 
-    with open('github-snake-dark.svg', 'r', encoding='utf-8') as f:
+    with open('svgs/github-snake-dark.svg', 'r', encoding='utf-8') as f:
         svg = f.read()
 
     # 1. Add custom CSS and text styles
@@ -105,7 +105,7 @@ def enhance():
     # Force dark background so it looks perfect on light mode too
     svg = svg.replace('<svg', '<svg style="background-color: #0d1117;"')
 
-    with open('github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
+    with open('svgs/github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
     print(f"Regex replace successful. All-Time Total contributions: {total}")
 

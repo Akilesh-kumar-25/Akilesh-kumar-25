@@ -34,7 +34,7 @@ jobs:
         with:
           github_user_name: Akilesh-kumar-25
           outputs: |
-            github-snake-dark.svg?palette=github-dark
+            svgs/github-snake-dark.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -42,10 +42,10 @@ jobs:
         run: python scripts/enhance_snake.py
 
       - name: Render animated contribution graph SVG
-        run: python scripts/generate_streak_svg.py Akilesh-kumar-25 contrib-heatmap.svg
+        run: python scripts/generate_streak_svg.py Akilesh-kumar-25 svgs/contrib-heatmap.svg
 
       - name: Commit updated art
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg github-snake-dark-enhanced.svg"
+          file_pattern: "data/contributions.json svgs/contrib-heatmap.svg svgs/github-snake-dark-enhanced.svg"

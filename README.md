@@ -1,15 +1,15 @@
 <div align="center">
 
-<img src="./akilesh-banner.svg?v=1" width="860" alt="Akilesh Kumar S" />
+<img src="./svgs/akilesh-banner.svg?v=1" width="860" alt="Akilesh Kumar S" />
 
 <br>
 
-<img src="./github-snake-dark-enhanced.svg?v=19" width="860" alt="GitHub Contributions Snake" />
+<img src="./svgs/github-snake-dark-enhanced.svg?v=19" width="860" alt="GitHub Contributions Snake" />
 
 <br>
 <br>
 
-<img src="./animated-profile-final.svg?v=4" width="860" alt="Dual Animated Profile" />
+<img src="./svgs/animated-profile-final.svg?v=4" width="860" alt="Dual Animated Profile" />
 
 <br>
 <br>
@@ -18,7 +18,7 @@
 <br>
 
 <div align="center">
-  <img src="./bento-tech-stack.svg?v=1" />
+  <img src="./svgs/bento-tech-stack.svg?v=1" />
 </div>
 
 <br>
@@ -28,10 +28,10 @@
 <br>
 
 <p align="center">
-  <a href="https://akileshkumar.netlify.app/"><img src="./connect-portfolio.svg?v=54" /></a>
-  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./connect-linkedin.svg?v=54" /></a>
-  <a href="https://www.instagram.com/akilesh_06/"><img src="./connect-instagram.svg?v=54" /></a>
-  <a href="mailto:akilesh.s8055@gmail.com"><img src="./connect-email.svg?v=54" /></a>
+  <a href="https://akileshkumar.netlify.app/"><img src="./svgs/connect-portfolio.svg?v=54" /></a>
+  <a href="https://www.linkedin.com/in/akileshkumar-s-5273932b7/"><img src="./svgs/connect-linkedin.svg?v=54" /></a>
+  <a href="https://www.instagram.com/akilesh_06/"><img src="./svgs/connect-instagram.svg?v=54" /></a>
+  <a href="mailto:akilesh.s8055@gmail.com"><img src="./svgs/connect-email.svg?v=54" /></a>
 </p>
 
 <br>
