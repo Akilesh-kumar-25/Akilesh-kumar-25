@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 320" width="860" height="320">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" width="860" height="220">
   <defs>
     <!-- True Typewriter Clip Paths using SMIL Animation -->
     <clipPath id="l1-clip"><rect x="0" y="-15" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="0.5s" dur="0.4s" fill="freeze"/></rect></clipPath>
@@ -10,13 +10,10 @@
     <clipPath id="l6-clip"><rect x="0" y="95" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="4.4s" dur="0.8s" fill="freeze"/></rect></clipPath>
     <clipPath id="l7-clip"><rect x="0" y="115" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.4s" dur="0.2s" fill="freeze"/></rect></clipPath>
     
-    <clipPath id="l8-clip"><rect x="0" y="145" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.8s" dur="0.6s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l9-clip"><rect x="0" y="165" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="6.6s" dur="0.6s" fill="freeze"/></rect></clipPath>
-    
-    <clipPath id="l10-clip"><rect x="0" y="195" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="7.4s" dur="0.5s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l8-clip"><rect x="0" y="145" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.8s" dur="0.4s" fill="freeze"/></rect></clipPath>
     
     <!-- Output lines just appear instantly -->
-    <clipPath id="l11-clip"><rect x="0" y="225" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="8.2s" dur="0.01s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l9-clip"><rect x="0" y="175" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="6.4s" dur="0.01s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <style>
@@ -38,7 +35,7 @@
     }
     .cursor { fill: #c9d1d9; animation: blink 1s step-end infinite; }
     @keyframes showCursor { 0% { opacity: 0; } 100% { opacity: 1; } }
-    .c-cursor { opacity: 0; animation: showCursor 0.1s forwards 8.3s; }
+    .c-cursor { opacity: 0; animation: showCursor 0.1s forwards 6.5s; }
 
     /* Experience List Styles */
     .exp-title { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; fill: #8B949E; letter-spacing: 2px; font-weight: bold; }
@@ -50,7 +47,7 @@
 
   <!-- LEFT COLUMN: Terminal -->
   <g>
-    <rect width="420" height="318" x="1" y="1" rx="8" class="terminal-bg"/>
+    <rect width="420" height="218" x="1" y="1" rx="8" class="terminal-bg"/>
     <rect width="420" height="30" x="1" y="1" rx="8" class="header"/>
     <rect width="420" height="15" x="1" y="16" class="header"/>
     <line x1="1" y1="31" x2="421" y2="31" stroke="#30363d" stroke-width="1.5px" />
@@ -67,38 +64,32 @@
       
       <g clip-path="url(#l3-clip)"><text y="50"><tspan class="var">akilesh</tspan> = Developer(</text></g>
       <g clip-path="url(#l4-clip)"><text y="70">    name=<tspan class="string">"Akilesh Kumar S"</tspan>,</text></g>
-      <g clip-path="url(#l5-clip)"><text y="90">    roles=[<tspan class="string">"Full-Stack"</tspan>, <tspan class="string">"AI Eng"</tspan>, <tspan class="string">"Trainer"</tspan>],</text></g>
+      <g clip-path="url(#l5-clip)"><text y="90">    roles=[<tspan class="string">"Full-Stack"</tspan>, <tspan class="string">"AI Eng"</tspan>, <tspan class="string">"AI Trainee"</tspan>],</text></g>
       <g clip-path="url(#l6-clip)"><text y="110">    edu=<tspan class="string">"B.Tech AI &amp; Data Science (2027)"</tspan></text></g>
       <g clip-path="url(#l7-clip)"><text y="130">)</text></g>
       
-      <g clip-path="url(#l8-clip)"><text y="160"><tspan class="var">akilesh</tspan>.add_exp(<tspan class="string">"Hexaware"</tspan>, <tspan class="string">"SDE Intern"</tspan>)</text></g>
-      <g clip-path="url(#l9-clip)"><text y="180"><tspan class="var">akilesh</tspan>.add_exp(<tspan class="string">"Appen"</tspan>, <tspan class="string">"AI Evaluator"</tspan>)</text></g>
+      <g clip-path="url(#l8-clip)"><text y="160"><tspan class="var">akilesh</tspan>.compile()</text></g>
       
-      <g clip-path="url(#l10-clip)"><text y="210"><tspan class="var">akilesh</tspan>.compile()</text></g>
-      
-      <g clip-path="url(#l11-clip)"><text y="240"><tspan class="success">[SUCCESS]</tspan> Profile deployed.</text></g>
+      <g clip-path="url(#l9-clip)"><text y="190"><tspan class="success">[SUCCESS]</tspan> Profile deployed.</text></g>
       
       <!-- Blinking Cursor -->
-      <rect x="200" y="230" width="7" height="13" class="cursor c-cursor"/>
+      <rect x="200" y="180" width="7" height="13" class="cursor c-cursor"/>
     </g>
   </g>
 
-  <!-- RIGHT COLUMN: Experience Timeline -->
+  <!-- RIGHT COLUMN: Experience Timeline (Hexaware Only) -->
   <g transform="translate(450, 0)">
     <text x="0" y="30" class="exp-title">EXPERIENCE</text>
 
     <!-- Hexaware -->
     <text x="0" y="70" class="exp-role">Hexaware Technologies <tspan fill="#8B949E">—</tspan> SDE Intern</text>
-    <text x="400" y="70" class="exp-date">Dec 2025 <tspan fill="#8B949E">—</tspan> Present</text>
+    <text x="400" y="70" class="exp-date">June 2024 <tspan fill="#8B949E">—</tspan> Present</text>
     
-    <text x="0" y="95" class="exp-skills">Java Spring Boot <tspan class="dot">·</tspan> React <tspan class="dot">·</tspan> MySQL</text>
-    <text x="0" y="115" class="exp-skills" fill="#58A6FF" font-size="12">> Architecting scalable E-commerce platforms</text>
-
-    <!-- Appen -->
-    <text x="0" y="165" class="exp-role">Appen <tspan fill="#8B949E">—</tspan> AI Evaluator &amp; Annotator</text>
-    <text x="400" y="165" class="exp-date">June 2024 <tspan fill="#8B949E">—</tspan> July 2024</text>
+    <text x="0" y="100" class="exp-skills">Java Spring Boot <tspan class="dot">·</tspan> React <tspan class="dot">·</tspan> MySQL</text>
     
-    <text x="0" y="190" class="exp-skills">LLM QA <tspan class="dot">·</tspan> Data Annotation <tspan class="dot">·</tspan> Evaluation</text>
-    <text x="0" y="210" class="exp-skills" fill="#58A6FF" font-size="12">> Training and validating robust AI models</text>
+    <!-- Added details -->
+    <text x="0" y="130" class="exp-skills" fill="#58A6FF" font-size="12">> Architecting scalable E-commerce platforms</text>
+    <text x="0" y="150" class="exp-skills" fill="#58A6FF" font-size="12">> Full-stack system integration &amp; database design</text>
+    <text x="0" y="170" class="exp-skills" fill="#58A6FF" font-size="12">> Driving performance optimizations in backend APIs</text>
   </g>
 </svg>
