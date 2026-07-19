@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 260" width="860" height="260">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 280" width="860" height="280">
   <defs>
     <!-- True Typewriter Clip Paths using SMIL Animation -->
     <clipPath id="l1-clip"><rect x="0" y="-15" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="0.5s" dur="0.4s" fill="freeze"/></rect></clipPath>
@@ -8,12 +8,13 @@
     <clipPath id="l4-clip"><rect x="0" y="50" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="2.6s" dur="0.6s" fill="freeze"/></rect></clipPath>
     <clipPath id="l5-clip"><rect x="0" y="70" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="3.4s" dur="0.8s" fill="freeze"/></rect></clipPath>
     <clipPath id="l6-clip"><rect x="0" y="90" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="4.4s" dur="0.8s" fill="freeze"/></rect></clipPath>
-    <clipPath id="l7-clip"><rect x="0" y="110" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.4s" dur="0.2s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l7-clip"><rect x="0" y="110" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.4s" dur="0.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l8-clip"><rect x="0" y="130" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="6.2s" dur="0.2s" fill="freeze"/></rect></clipPath>
     
-    <clipPath id="l8-clip"><rect x="0" y="140" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.8s" dur="0.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l9-clip"><rect x="0" y="160" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="6.6s" dur="0.4s" fill="freeze"/></rect></clipPath>
     
     <!-- Output lines just appear instantly -->
-    <clipPath id="l9-clip"><rect x="0" y="170" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="6.4s" dur="0.01s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l10-clip"><rect x="0" y="190" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="7.2s" dur="0.01s" fill="freeze"/></rect></clipPath>
   </defs>
 
   <style>
@@ -35,7 +36,7 @@
     }
     .cursor { fill: #c9d1d9; animation: blink 1s step-end infinite; }
     @keyframes showCursor { 0% { opacity: 0; } 100% { opacity: 1; } }
-    .c-cursor { opacity: 0; animation: showCursor 0.1s forwards 6.5s; }
+    .c-cursor { opacity: 0; animation: showCursor 0.1s forwards 7.3s; }
 
     /* Experience List Styles */
     .exp-title { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; fill: #8B949E; letter-spacing: 2px; font-weight: bold; }
@@ -47,8 +48,8 @@
 
   <!-- LEFT COLUMN: Terminal -->
   <g>
-    <!-- Made the terminal window 258px tall to perfectly fit all the text without cutting it off -->
-    <rect width="420" height="258" x="1" y="1" rx="8" class="terminal-bg"/>
+    <!-- Increased terminal height to 278px to fit the new university line -->
+    <rect width="420" height="278" x="1" y="1" rx="8" class="terminal-bg"/>
     <rect width="420" height="30" x="1" y="1" rx="8" class="header"/>
     <rect width="420" height="15" x="1" y="16" class="header"/>
     <line x1="1" y1="31" x2="421" y2="31" stroke="#30363d" stroke-width="1.5px" />
@@ -66,32 +67,33 @@
       <g clip-path="url(#l3-clip)"><text y="45"><tspan class="var">akilesh</tspan> = Developer(</text></g>
       <g clip-path="url(#l4-clip)"><text y="65">    name=<tspan class="string">"Akilesh Kumar S"</tspan>,</text></g>
       <g clip-path="url(#l5-clip)"><text y="85">    roles=[<tspan class="string">"Full-Stack"</tspan>, <tspan class="string">"AI Eng"</tspan>, <tspan class="string">"AI Trainee"</tspan>],</text></g>
-      <g clip-path="url(#l6-clip)"><text y="105">    edu=<tspan class="string">"B.Tech AI &amp; Data Science (2027)"</tspan></text></g>
-      <g clip-path="url(#l7-clip)"><text y="125">)</text></g>
+      <g clip-path="url(#l6-clip)"><text y="105">    univ=<tspan class="string">"SRM Valliammai Engineering College"</tspan>,</text></g>
+      <g clip-path="url(#l7-clip)"><text y="125">    edu=<tspan class="string">"B.Tech AI &amp; Data Science (2027)"</tspan></text></g>
+      <g clip-path="url(#l8-clip)"><text y="145">)</text></g>
       
-      <g clip-path="url(#l8-clip)"><text y="155"><tspan class="var">akilesh</tspan>.compile()</text></g>
+      <g clip-path="url(#l9-clip)"><text y="175"><tspan class="var">akilesh</tspan>.compile()</text></g>
       
-      <g clip-path="url(#l9-clip)"><text y="185"><tspan class="success">[SUCCESS]</tspan> Profile deployed.</text></g>
+      <g clip-path="url(#l10-clip)"><text y="205"><tspan class="success">[SUCCESS]</tspan> Profile deployed.</text></g>
       
       <!-- Blinking Cursor -->
-      <rect x="200" y="175" width="7" height="13" class="cursor c-cursor"/>
+      <rect x="200" y="195" width="7" height="13" class="cursor c-cursor"/>
     </g>
   </g>
 
   <!-- RIGHT COLUMN: Experience Timeline (Hexaware Only) -->
   <g transform="translate(450, 0)">
-    <!-- Shifted down slightly to perfectly center with the newly sized terminal -->
-    <text x="0" y="45" class="exp-title">EXPERIENCE</text>
+    <!-- Shifted down 10px more to perfectly center with the newly sized 280px terminal -->
+    <text x="0" y="55" class="exp-title">EXPERIENCE</text>
 
     <!-- Hexaware -->
-    <text x="0" y="85" class="exp-role">Hexaware Technologies <tspan fill="#8B949E">—</tspan> SDE Intern</text>
-    <text x="400" y="85" class="exp-date">June 2026 <tspan fill="#8B949E">—</tspan> Present</text>
+    <text x="0" y="95" class="exp-role">Hexaware Technologies <tspan fill="#8B949E">—</tspan> SDE Intern</text>
+    <text x="400" y="95" class="exp-date">June 2026 <tspan fill="#8B949E">—</tspan> Present</text>
     
-    <text x="0" y="115" class="exp-skills">Java Spring Boot <tspan class="dot">·</tspan> React <tspan class="dot">·</tspan> MySQL</text>
+    <text x="0" y="125" class="exp-skills">Java Spring Boot <tspan class="dot">·</tspan> React <tspan class="dot">·</tspan> MySQL</text>
     
     <!-- Details -->
-    <text x="0" y="145" class="exp-skills" fill="#58A6FF" font-size="12">> Architecting scalable E-commerce platforms</text>
-    <text x="0" y="165" class="exp-skills" fill="#58A6FF" font-size="12">> Full-stack system integration &amp; database design</text>
-    <text x="0" y="185" class="exp-skills" fill="#58A6FF" font-size="12">> Driving performance optimizations in backend APIs</text>
+    <text x="0" y="155" class="exp-skills" fill="#58A6FF" font-size="12">> Architecting scalable E-commerce platforms</text>
+    <text x="0" y="175" class="exp-skills" fill="#58A6FF" font-size="12">> Full-stack system integration &amp; database design</text>
+    <text x="0" y="195" class="exp-skills" fill="#58A6FF" font-size="12">> Driving performance optimizations in backend APIs</text>
   </g>
 </svg>
