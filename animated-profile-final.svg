@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" width="860" height="220">
+  <defs>
+    <!-- True Typewriter Clip Paths using SMIL Animation -->
+    <clipPath id="l1-clip"><rect x="0" y="-15" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="0.5s" dur="0.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l2-clip"><rect x="0" y="5" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="1.2s" dur="0.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l3-clip"><rect x="0" y="35" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="2.0s" dur="0.5s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l4-clip"><rect x="0" y="55" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="2.7s" dur="0.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l5-clip"><rect x="0" y="75" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="3.5s" dur="0.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="l6-clip"><rect x="0" y="95" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="4.2s" dur="0.2s" fill="freeze"/></rect></clipPath>
+    
+    <clipPath id="l7-clip"><rect x="0" y="125" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="4.6s" dur="0.5s" fill="freeze"/></rect></clipPath>
+    
+    <!-- Output lines just appear instantly -->
+    <clipPath id="l8-clip"><rect x="0" y="155" width="0" height="20"><animate attributeName="width" from="0" to="400" begin="5.4s" dur="0.01s" fill="freeze"/></rect></clipPath>
+  </defs>
+
+  <style>
+    /* Base Terminal Styles */
+    .terminal-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1.5px; }
+    .header { fill: #161b22; }
+    
+    .text-code { font-family: "JetBrains Mono", Consolas, monospace; font-size: 12px; fill: #c9d1d9; }
+    
+    /* Code Colors */
+    .keyword { fill: #ff7b72; }
+    .string { fill: #a5d6ff; }
+    .var { fill: #79c0ff; }
+    .success { fill: #3fb950; font-weight: bold; }
+    
+    @keyframes blink { 
+      0%, 50% { opacity: 1; } 
+      51%, 100% { opacity: 0; } 
+    }
+    .cursor { fill: #c9d1d9; animation: blink 1s step-end infinite; }
+    @keyframes showCursor { 0% { opacity: 0; } 100% { opacity: 1; } }
+    .c-cursor { opacity: 0; animation: showCursor 0.1s forwards 5.5s; }
+
+    /* Experience List Styles */
+    .exp-title { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; fill: #8B949E; letter-spacing: 2px; font-weight: bold; }
+    .exp-role { font-family: "JetBrains Mono", Consolas, monospace; font-size: 14px; fill: #FFFFFF; font-weight: bold; }
+    .exp-date { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; fill: #8B949E; text-anchor: end; }
+    .exp-skills { font-family: "JetBrains Mono", Consolas, monospace; font-size: 13px; fill: #8B949E; }
+    .dot { fill: #58A6FF; }
+  </style>
+
+  <!-- LEFT COLUMN: Terminal -->
+  <g>
+    <rect width="420" height="218" x="1" y="1" rx="8" class="terminal-bg"/>
+    <rect width="420" height="30" x="1" y="1" rx="8" class="header"/>
+    <rect width="420" height="15" x="1" y="16" class="header"/>
+    <line x1="1" y1="31" x2="421" y2="31" stroke="#30363d" stroke-width="1.5px" />
+    
+    <circle cx="18" cy="16" r="5" fill="#ff5f56"/>
+    <circle cx="34" cy="16" r="5" fill="#ffbd2e"/>
+    <circle cx="50" cy="16" r="5" fill="#27c93f"/>
+    <text x="210" y="20" class="text-code" fill="#8b949e" font-size="11" text-anchor="middle">workspace/profile.py</text>
+
+    <!-- Typing Code -->
+    <g transform="translate(15, 60)" class="text-code">
+      <g clip-path="url(#l1-clip)"><text y="0"><tspan class="keyword">import</tspan> sys</text></g>
+      <g clip-path="url(#l2-clip)"><text y="20"><tspan class="keyword">from</tspan> core <tspan class="keyword">import</tspan> Developer</text></g>
+      <g clip-path="url(#l3-clip)"><text y="50"><tspan class="var">akilesh</tspan> = Developer(</text></g>
+      <g clip-path="url(#l4-clip)"><text y="70">    name=<tspan class="string">"Akilesh Kumar S"</tspan>,</text></g>
+      <g clip-path="url(#l5-clip)"><text y="90">    role=<tspan class="string">"Full-Stack &amp; AI Engineer"</tspan></text></g>
+      <g clip-path="url(#l6-clip)"><text y="110">)</text></g>
+      
+      <g clip-path="url(#l7-clip)"><text y="140"><tspan class="var">akilesh</tspan>.compile()</text></g>
+      
+      <g clip-path="url(#l8-clip)"><text y="170"><tspan class="success">[SUCCESS]</tspan> Profile deployed.</text></g>
+      
+      <!-- Blinking Cursor -->
+      <rect x="200" y="160" width="7" height="13" class="cursor c-cursor"/>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: Experience Timeline (Hexaware Only) -->
+  <g transform="translate(450, 0)">
+    <text x="0" y="30" class="exp-title">EXPERIENCE</text>
+
+    <!-- Hexaware -->
+    <text x="0" y="70" class="exp-role">Hexaware Technologies <tspan fill="#8B949E">—</tspan> SDE Intern</text>
+    <text x="400" y="70" class="exp-date">Dec 2025 <tspan fill="#8B949E">—</tspan> Present</text>
+    
+    <text x="0" y="100" class="exp-skills">Spring Boot <tspan class="dot">·</tspan> React <tspan class="dot">·</tspan> MySQL</text>
+    <text x="0" y="120" class="exp-skills">Scalable E-commerce Platforms</text>
+    
+    <text x="0" y="155" class="exp-skills" fill="#58A6FF" font-size="12">> System Architecture &amp; Integration</text>
+  </g>
+</svg>
