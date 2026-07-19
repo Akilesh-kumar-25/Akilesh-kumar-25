@@ -9,12 +9,7 @@
 <br>
 <br>
 
-<table>
-<tr>
-<td valign="top"><img src="./akilesh-identity.svg" width="370" alt="Code Identity" /></td>
-<td valign="top"><img src="./terminal-profile.svg" width="490" alt="Terminal Profile" /></td>
-</tr>
-</table>
+<img src="./dual-profile.svg" width="860" alt="Dual Animated Profile" />
 
 <br>
 <br>
