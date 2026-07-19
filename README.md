@@ -9,7 +9,7 @@
 <br>
 <br>
 
-<img src="./animated-profile-final.svg" width="860" alt="Dual Animated Profile" />
+<img src="./animated-profile-final.svg?v=1" width="860" alt="Dual Animated Profile" />
 
 <br>
 <br>
