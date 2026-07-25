@@ -27,6 +27,23 @@ def fetch_all_time_total():
             total = 1113 # fallback
     return total
 
+def update_readme_timestamp():
+    readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "README.md")
+    if not os.path.exists(readme_path) and os.path.exists("README.md"):
+        readme_path = "README.md"
+    if os.path.exists(readme_path):
+        import time
+        try:
+            with open(readme_path, "r", encoding="utf-8") as f:
+                content = f.read()
+            ts = str(int(time.time()))
+            content = re.sub(r'(\./svgs/github-snake-dark-enhanced\.svg)\?[^\"]*', r'\1?t=' + ts, content)
+            with open(readme_path, "w", encoding="utf-8") as f:
+                f.write(content)
+            print(f"Updated README.md snake cache buster timestamp to t={ts}")
+        except Exception as e:
+            print(f"Could not update README.md timestamp: {e}")
+
 def enhance():
     total = fetch_all_time_total()
 
@@ -40,6 +57,7 @@ def enhance():
             with open(enhanced_path, 'w', encoding='utf-8') as f:
                 f.write(svg)
             print(f"Updated existing enhanced SVG. All-Time Total contributions: {total:,}")
+            update_readme_timestamp()
             return
         else:
             print("No snake SVG found to enhance.")
@@ -132,6 +150,7 @@ def enhance():
 
     with open('svgs/github-snake-dark-enhanced.svg', 'w', encoding='utf-8') as f:
         f.write(svg)
-    print(f"Regex replace successful. All-Time Total contributions: {total}")
+    print(f"Regex replace successful. All-Time Total contributions: {total:,}")
+    update_readme_timestamp()
 
 enhance()

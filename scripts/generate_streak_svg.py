@@ -102,20 +102,3 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 
 open(OUT, "w").write(svg)
 print(f"Wrote {OUT}: {n} days, {total:,} contributions, {len(svg)//1024} KB")
-
-# Update cache buster timestamps in README.md if it exists
-readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "README.md")
-if not os.path.exists(readme_path) and os.path.exists("README.md"):
-    readme_path = "README.md"
-if os.path.exists(readme_path):
-    import time, re
-    try:
-        with open(readme_path, "r", encoding="utf-8") as f:
-            content = f.read()
-        ts = str(int(time.time()))
-        content = re.sub(r'(\./svgs/(?:github-snake-dark-enhanced|contrib-heatmap)\.svg)\?[^\"]*', r'\1?t=' + ts, content)
-        with open(readme_path, "w", encoding="utf-8") as f:
-            f.write(content)
-        print(f"Updated README.md cache buster timestamp to t={ts}")
-    except Exception as e:
-        print(f"Could not update README.md timestamp: {e}")
