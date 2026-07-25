@@ -4,12 +4,12 @@
 
 <br>
 
-<img src="./svgs/github-snake-dark-enhanced.svg?t=1784963794" width="860" alt="GitHub Contributions Snake" />
+<img src="./svgs/github-snake-dark-enhanced.svg?t=1784963864" width="860" alt="GitHub Contributions Snake" />
 
 <br>
 <br>
 
-<img src="./svgs/contrib-heatmap.svg?t=1784963794" width="860" alt="GitHub Contributions Heatmap" />
+<img src="./svgs/contrib-heatmap.svg?t=1784963864" width="860" alt="GitHub Contributions Heatmap" />
 
 <br>
 <br>
