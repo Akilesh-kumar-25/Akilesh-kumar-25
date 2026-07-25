@@ -37,10 +37,10 @@ def update_readme_timestamp():
             with open(readme_path, "r", encoding="utf-8") as f:
                 content = f.read()
             ts = str(int(time.time()))
-            content = re.sub(r'(\./svgs/github-snake-dark-enhanced\.svg)\?[^\"]*', r'\1?t=' + ts, content)
+            content = re.sub(r'(\./svgs/github-snake-dark-enhanced\.svg)\?[^\"]*', r'\1?v=' + ts, content)
             with open(readme_path, "w", encoding="utf-8") as f:
                 f.write(content)
-            print(f"Updated README.md snake cache buster timestamp to t={ts}")
+            print(f"Updated README.md snake cache buster timestamp to v={ts}")
         except Exception as e:
             print(f"Could not update README.md timestamp: {e}")
 
