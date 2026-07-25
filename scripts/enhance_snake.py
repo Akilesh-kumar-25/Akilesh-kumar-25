@@ -1,5 +1,7 @@
 import re
 import urllib.request
+import os
+import json
 
 def fetch_all_time_total():
     total = 0
@@ -13,14 +15,37 @@ def fetch_all_time_total():
                 total += int(m.group(1).replace(',', ''))
         except:
             pass
+    if total == 0:
+        try:
+            local_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "contributions.json")
+            if os.path.exists(local_path):
+                with open(local_path, "r", encoding="utf-8") as f:
+                    total = json.load(f).get("total_contributions", 0)
+        except Exception:
+            pass
+        if total == 0:
+            total = 1113 # fallback
     return total
 
 def enhance():
     total = fetch_all_time_total()
-    if total == 0:
-        total = 221 # fallback
 
-    with open('svgs/github-snake-dark.svg', 'r', encoding='utf-8') as f:
+    input_path = 'svgs/github-snake-dark.svg'
+    if not os.path.exists(input_path):
+        enhanced_path = 'svgs/github-snake-dark-enhanced.svg'
+        if os.path.exists(enhanced_path):
+            with open(enhanced_path, 'r', encoding='utf-8') as f:
+                svg = f.read()
+            svg = re.sub(r'Overall Contributions:\s*[\d,]+', f'Overall Contributions: {total:,}', svg)
+            with open(enhanced_path, 'w', encoding='utf-8') as f:
+                f.write(svg)
+            print(f"Updated existing enhanced SVG. All-Time Total contributions: {total:,}")
+            return
+        else:
+            print("No snake SVG found to enhance.")
+            return
+
+    with open(input_path, 'r', encoding='utf-8') as f:
         svg = f.read()
 
     # 1. Add custom CSS and text styles

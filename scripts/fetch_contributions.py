@@ -45,7 +45,8 @@ def fetch_days():
         else:
             m = re.match(r"(\d+)", text)
             count = int(m.group(1)) if m else 0
-        days.append({"date": date, "count": count})
+        level = int(td.get("data-level", 0))
+        days.append({"date": date, "count": count, "level": level})
 
     days.sort(key=lambda d: d["date"])
     return days
@@ -106,7 +107,7 @@ def build_data(days):
         "avg_per_active_day": round(total / active_days, 1) if active_days else 0,
         "current_streak": {"length": cur_len, "start": cur_start, "end": cur_end},
         "longest_streak": {"length": long_len, "start": long_start, "end": long_end},
-        "best_day": {"date": best["date"], "count": best["count"]},
+        "best_day": {"date": best["date"], "count": best["count"], "level": best.get("level", 0)},
         "monthly": monthly_list,
         "days": days,
     }

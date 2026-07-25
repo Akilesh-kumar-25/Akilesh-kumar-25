@@ -9,6 +9,22 @@ USER = sys.argv[1] if len(sys.argv) > 1 else "Akilesh-kumar-25"
 OUT  = sys.argv[2] if len(sys.argv) > 2 else "streak.svg"
 
 def get_data(user):
+    # First, try to use the locally scraped real contributions data from GitHub
+    for p in [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "contributions.json"),
+        "data/contributions.json",
+    ]:
+        if os.path.exists(p):
+            try:
+                with open(p, "r", encoding="utf-8") as f:
+                    local_data = json.load(f)
+                return {
+                    "total": {"lastYear": local_data.get("total_contributions", 0)},
+                    "contributions": local_data.get("days", []),
+                }
+            except Exception as e:
+                print(f"Failed reading local contributions ({e}); trying API...")
+
     url = f"https://github-contributions-api.jogruber.de/v4/{user}?y=last"
     try:
         with urllib.request.urlopen(url, timeout=25) as r:
@@ -33,7 +49,10 @@ GRAY = "#7d8590"
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
 n = len(contribs)
-NW = (n + 6) // 7
+sd = datetime.date.fromisoformat(contribs[0]["date"])
+start_sunday = sd - datetime.timedelta(days=(sd.weekday() + 1) % 7)
+ed = datetime.date.fromisoformat(contribs[-1]["date"])
+NW = (ed - start_sunday).days // 7 + 1
 W = LEFT + NW*(CELL+GAP) + 6
 H = TOP + 7*(CELL+GAP) + 22
 
@@ -42,10 +61,9 @@ REVEAL, DUR = 3.6, 0.55
 maxorder = (NW-1) + 6*0.55
 
 rects, labels = [], []
-sd = datetime.date.fromisoformat(contribs[0]["date"])
 last_m = None
 for wk in range(NW):
-    d = sd + datetime.timedelta(days=wk*7)
+    d = start_sunday + datetime.timedelta(days=wk*7)
     if d.month != last_m:
         last_m = d.month
         labels.append(f'<text class="lbl" x="{LEFT+wk*(CELL+GAP)}" y="{TOP-8}">{MONTHS[d.month-1]}</text>')
@@ -53,13 +71,17 @@ for name, r in [("Mon",1),("Wed",3),("Fri",5)]:
     labels.append(f'<text class="lbl" x="2" y="{TOP+r*(CELL+GAP)+CELL-2}">{name}</text>')
 
 for i, c in enumerate(contribs):
-    wk, row, lvl = i//7, i%7, c["level"]
+    d = datetime.date.fromisoformat(c["date"])
+    wk = (d - start_sunday).days // 7
+    row = (d.weekday() + 1) % 7
+    lvl = c.get("level", 0 if c.get("count", 0) == 0 else min(4, max(1, (c.get("count", 0) + 2) // 5)))
     x = LEFT + wk*(CELL+GAP); y = TOP + row*(CELL+GAP)
     delay = round((wk + row*0.55)/maxorder * REVEAL, 3)
     cls = "c g" if lvl >= 1 else "c e"
     rects.append(
         f'<rect class="{cls}" x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="{RAD}" '
-        f'fill="{COLORS[lvl]}" style="animation-delay:{delay}s"/>'
+        f'fill="{COLORS[lvl]}" style="animation-delay:{delay}s">'
+        f'<title>{c.get("count", 0)} contributions on {c["date"]}</title></rect>'
     )
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" font-family="-apple-system,Segoe UI,Helvetica,Arial,sans-serif">
@@ -80,3 +102,20 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
 
 open(OUT, "w").write(svg)
 print(f"Wrote {OUT}: {n} days, {total:,} contributions, {len(svg)//1024} KB")
+
+# Update cache buster timestamps in README.md if it exists
+readme_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "README.md")
+if not os.path.exists(readme_path) and os.path.exists("README.md"):
+    readme_path = "README.md"
+if os.path.exists(readme_path):
+    import time, re
+    try:
+        with open(readme_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        ts = str(int(time.time()))
+        content = re.sub(r'(\./svgs/(?:github-snake-dark-enhanced|contrib-heatmap)\.svg)\?[^\"]*', r'\1?t=' + ts, content)
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"Updated README.md cache buster timestamp to t={ts}")
+    except Exception as e:
+        print(f"Could not update README.md timestamp: {e}")
