@@ -5,7 +5,7 @@ name: Update profile art
 
 "on":
   schedule:
-    - cron: "*/5 * * * *"   # Every 5 minutes (closest to real-time GitHub allows)
+    - cron: "0 */6 * * *"   # Every 6 hours (4 times a day) to avoid rate limits
   workflow_dispatch: {}
   push:
     branches: [main]
